@@ -24,7 +24,7 @@
             "Dynamic\\Locations\\Tests\\": "tests/"
         }
     },
-    "extra": 
+    "extra": {
         "expose": [
             "client/dist"
         ]
