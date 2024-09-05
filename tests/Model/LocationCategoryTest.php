@@ -1,17 +1,17 @@
 <?php
 
-namespace Dynamic\Elements\Locations\Test;
+namespace Dynamic\Locations\Test;
 
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Dev\SapphireTest;
-use Dynamic\Elements\Locations\Model\LocationCategory;
+use Dynamic\Locations\Model\LocationCategory;
 
 class LocationCategoryTest extends SapphireTest
 {
     /**
      * @var string
      */
-    protected static string $fixture_file = 'location-category.yml';
+    protected static $fixture_file = 'location-category.yml';
 
     /**
      * Test the CMS Fields
