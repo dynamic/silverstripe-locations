@@ -1,6 +1,6 @@
 # Silverstripe Locations
 
-A locations module for silverstripe.
+A Location DataObject for Silverstripe. Includes the ability to generate coordinates based on an address. 
 
 ![CI](https://github.com/dynamic/silverstripe-locations/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/dynamic/silverstripe-locations/branch/master/graph/badge.svg)](https://codecov.io/gh/dynamic/silverstripe-locations)
@@ -25,11 +25,7 @@ See [License](LICENSE.md)
 
 ## Usage
 
-A simple Bootstrap-style Card for Silverstripe Elemental. Intended for use with Elemental Grid.
-
-### Template Notes
-
-The default templates are based off [Bootstrap 5](https://getbootstrap.com/) card component.
+Use the Locations Admin to create Location records.
 
 ## Maintainers
 
