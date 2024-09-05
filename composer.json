@@ -1,6 +1,6 @@
 {
     "name": "dynamic/silverstripe-locations",
-    "description": "A locations module for silverstripe.",
+    "description": "A Location DataObject for Silverstripe. Includes the ability to generate coordinates based on an address.",
     "license": "BSD-3-Clause",
     "type": "silverstripe-vendormodule",
     "keywords": [
