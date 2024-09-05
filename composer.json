@@ -16,10 +16,11 @@
         }
     ],
     "require": {
-        "silverstripe/admin": "^2.0",
+        "silverstripe/recipe-cms": "^5.0",
         "silverstripe/linkfield": "^4.0"
     },
     "require-dev": {
+        "dnadesign/silverstripe-elemental": "^5",
         "silverstripe/recipe-testing": "^3"
     },
     "minimum-stability": "dev",
