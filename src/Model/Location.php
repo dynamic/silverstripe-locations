@@ -6,6 +6,7 @@ use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\MultiLinkField;
+use SilverStripe\Versioned\Versioned;
 
 /**
  * Class \Dynamic\Elements\Locations\Model\Location
@@ -72,6 +73,14 @@ class Location extends DataObject
      */
     private static array $owns = [
         'Links',
+    ];
+
+    /**
+     * @var array
+     * @config
+     */
+    private static array $extensions = [
+        Versioned::class,
     ];
 
     /**
