@@ -109,6 +109,9 @@ class Location extends DataObject
         AddressDataExtension::class,
     ];
 
+    /**
+     * create a list of assigned categories
+     */
     public function getCategoryList()
     {
         if ($this->Categories()->count()) {
@@ -116,6 +119,22 @@ class Location extends DataObject
         }
 
         return '';
+    }
+
+    /**
+     * @param bool $includerelations
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+
+        $labels['Title'] = _t(__CLASS__ . '.TitleLabel', 'Title');
+        $labels['Content'] = _t(__CLASS__ . '.ContentLabel', 'Description');
+        $labels['Links'] = _t(__CLASS__ . '.LinksLabel', 'Links');
+        $labels['Categories'] = _t(__CLASS__ . '.CategoriesLabel', 'Categories');
+
+        return $labels;
     }
 
     /**

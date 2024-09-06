@@ -1,0 +1,19 @@
+en:
+  Dynamic\Locations\Model\Location:
+    CategoriesLabel: 'Categories'
+    ContentLabel: 'Description'
+    LinksLabel: 'Links'
+    PLURALNAME: 'Locations'
+    PLURALS:
+      one: 'A Location'
+      other: '{count} Locations'
+    SINGULARNAME: 'Location'
+    TitleLabel: 'Title'
+
+  Dynamic\Locations\Model\LocationCategory:
+    PLURALNAME: Categories
+    PLURALS:
+      one: 'A Cateogry'
+      other: '{count} Categories'
+    SINGULARNAME: Category
+    TitleLabel: 'Title'
