@@ -80,10 +80,43 @@ class Location extends DataObject
      * @var array
      * @config
      */
+    private static $summary_fields = [
+        'Title',
+        'FullAddress' => 'Address',
+        'CategoryList' => 'Categories',
+        'Lat',
+        'Lng',
+    ];
+
+    /**
+     * @var array
+     * @config
+     */
+    private static $searchable_fields = [
+        'Title',
+        'City',
+        'State',
+        'PostalCode',
+        'Country',
+    ];
+
+    /**
+     * @var array
+     * @config
+     */
     private static array $extensions = [
         Versioned::class,
         AddressDataExtension::class,
     ];
+
+    public function getCategoryList()
+    {
+        if ($this->Categories()->count()) {
+            return implode(', ', $this->Categories()->column('Title'));
+        }
+
+        return '';
+    }
 
     /**
      * @return FieldList
