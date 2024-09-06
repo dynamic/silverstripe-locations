@@ -51,4 +51,17 @@ class LocationCategory extends DataObject
     private static array $belongs_many_many = [
         'Locations' => Location::class,
     ];
+
+    /**
+     * @param bool $includerelations
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+
+        $labels['Title'] = _t(__CLASS__ . '.TitleLabel', 'Title');
+
+        return $labels;
+    }
 }
