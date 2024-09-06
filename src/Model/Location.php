@@ -2,6 +2,7 @@
 
 namespace Dynamic\Locations\Model;
 
+use Dynamic\SilverStripeGeocoder\AddressDataExtension;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\LinkField\Models\Link;
@@ -81,6 +82,7 @@ class Location extends DataObject
      */
     private static array $extensions = [
         Versioned::class,
+        AddressDataExtension::class,
     ];
 
     /**
