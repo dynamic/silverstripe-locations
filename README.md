@@ -27,6 +27,18 @@ See [License](LICENSE.md)
 
 Use the Locations Admin to create Location records.
 
+## Configuration
+
+This module uses [dynamic/silverstripe-geocoder](https://github.com/dynamic/silverstripe-geocoder) to generate coordinates for Locations. To enable geocoding, add the following to `mysite.yml`:
+
+```yaml
+Dynamic\SilverStripeGeocoder\GoogleGeocoder:
+  geocoder_api_key: 'your-key-here'
+  map_api_key: 'your-2nd-key-here'
+```
+
+For more information about why 2 keys are required, see [Silverstripe Geocoder Documentation](https://github.com/dynamic/silverstripe-geocoder?tab=readme-ov-file#google-api-keys)
+
 ## Maintainers
 
  *  [Dynamic](https://www.dynamicagency.com) (<dev@dynamicagency.com>)
