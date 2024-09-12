@@ -3,7 +3,6 @@
 A Location DataObject for Silverstripe. Includes the ability to generate coordinates based on an address. 
 
 ![CI](https://github.com/dynamic/silverstripe-locations/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/dynamic/silverstripe-locations/branch/master/graph/badge.svg)](https://codecov.io/gh/dynamic/silverstripe-locations)
 
 [![Latest Stable Version](https://poser.pugx.org/dynamic/silverstripe-locations/v/stable)](https://packagist.org/packages/dynamic/silverstripe-locations)
 [![Total Downloads](https://poser.pugx.org/dynamic/silverstripe-locations/downloads)](https://packagist.org/packages/dynamic/silverstripe-locations)
