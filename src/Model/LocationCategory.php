@@ -53,6 +53,23 @@ class LocationCategory extends DataObject
     ];
 
     /**
+     * @var array
+     * @config
+     */
+    private static array $summary_fields = [
+        'Title' => 'Title',
+        'Locations.Count' => 'Locations',
+    ];
+
+    /**
+     * @var array
+     * @config
+     */
+    private static array $searchable_fields = [
+        'Title',
+    ];
+
+    /**
      * @param bool $includerelations
      * @return array
      */
