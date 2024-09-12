@@ -14,6 +14,7 @@ A Location DataObject for Silverstripe. Includes the ability to generate coordin
 * dynamic/silverstripe-geocoder: ^3.0
 * silverstripe/recipe-cms: ^5.0
 * silverstripe/linkfield: ^4.0
+* silverstripe/tagfield: ^3.0
 
 ## Installation
 
