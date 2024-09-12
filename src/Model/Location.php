@@ -7,15 +7,28 @@ use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\LinkField\Models\Link;
 use SilverStripe\LinkField\Form\MultiLinkField;
+use SilverStripe\TagField\TagField;
 use SilverStripe\Versioned\Versioned;
 
 /**
  * Class \Dynamic\Elements\Locations\Model\Location
  *
+ * @property string $Address
+ * @property string $Address2
+ * @property string $City
+ * @property string $State
+ * @property string $PostalCode
+ * @property string $Country
+ * @property bool $LatLngOverride
+ * @property float $Lat
+ * @property float $Lng
+ * @property int $Version
  * @property string $Title
  * @property string $Content
  * @method DataList|Link[] Links()
  * @method ManyManyList|LocationCategory[] Categories()
+ * @mixin Versioned
+ * @mixin AddressDataExtension
  */
 class Location extends DataObject
 {
@@ -143,11 +156,15 @@ class Location extends DataObject
     public function getCMSFields(): FieldList
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
-            $fields->removeByName(['Links']);
+            $fields->removeByName([
+                'Links',
+                'Categories',
+            ]);
 
             $fields->addFieldsToTab(
                 'Root.Main',
                 [
+                    TagField::create('Categories', 'Categories', LocationCategory::get(), $this->Categories()),
                     MultiLinkField::create('Links'),
                 ]
             );
