@@ -2,13 +2,17 @@
 
 namespace Dynamic\Locations\Model;
 
-use Dynamic\SilverStripeGeocoder\AddressDataExtension;
+use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\LinkField\Models\Link;
-use SilverStripe\LinkField\Form\MultiLinkField;
 use SilverStripe\TagField\TagField;
 use SilverStripe\Versioned\Versioned;
+use SilverStripe\LinkField\Models\Link;
+use SilverStripe\LinkField\Models\EmailLink;
+use SilverStripe\LinkField\Models\PhoneLink;
+use SilverStripe\LinkField\Form\MultiLinkField;
+use Dynamic\SilverStripeGeocoder\AddressDataExtension;
+use SilverStripe\LinkField\Models\ExternalLink;
 
 /**
  * Class \Dynamic\Elements\Locations\Model\Location
@@ -55,6 +59,12 @@ class Location extends DataObject
      * @config
      */
     private static string $description = 'A Location DataObject for use with the Locations Element';
+
+    /**
+     * @var string
+     * @config
+     */
+    private static string $menu_icon_class = 'font-icon-globe-1';
 
     /**
      * @var array
@@ -171,5 +181,29 @@ class Location extends DataObject
         });
 
         return parent::getCMSFields();
+    }
+
+    /**
+     * @return DataList
+     */
+    public function getPhoneNumbers()
+    {
+        return $this->Links()->filter('ClassName', PhoneLink::class);
+    }
+
+    /**
+     * @return DataList
+     */
+    public function getEmailAddresses()
+    {
+        return $this->Links()->filter('ClassName', EmailLink::class);
+    }
+
+    /**
+     * @return DataList
+     */
+    public function getWebsiteLinks()
+    {
+        return $this->Links()->filter('ClassName', ExternalLink::class);
     }
 }
